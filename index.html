@@ -181,6 +181,28 @@
             }
         }
 
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         @media (max-width: 1024px) {
             .visual-element {
                 opacity: 0.15;
@@ -440,7 +462,8 @@
             perspective: 1000px;
             height: 500px;
             cursor: pointer;
-            animation: slideInLeft 0.6s ease-out;
+            animation: slideInLeft 0.7s ease-out;
+            transition: all 0.3s ease;
         }
 
         .flip-card[data-index="1"] {
@@ -449,6 +472,10 @@
 
         .flip-card[data-index="2"] {
             animation-delay: 0.2s;
+        }
+
+        .flip-card:hover {
+            transform: translateY(-8px);
         }
 
         .flip-card-inner {
@@ -656,8 +683,8 @@
             border-radius: 16px;
             box-shadow: 0 6px 20px rgba(231, 111, 81, 0.12);
             position: relative;
-            transition: all 0.3s ease;
-            animation: slideInLeft 0.6s ease-out;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideInLeft 0.7s ease-out;
         }
 
         .method-item:nth-child(2n) {
@@ -673,7 +700,7 @@
         }
 
         .method-item:hover {
-            transform: translateY(-12px);
+            transform: translateY(-14px) scale(1.02);
             box-shadow: 0 16px 40px rgba(231, 111, 81, 0.18);
         }
 
@@ -726,7 +753,8 @@
             box-shadow: 0 6px 20px rgba(231, 111, 81, 0.12);
             position: relative;
             overflow: hidden;
-            animation: slideInLeft 0.6s ease-out;
+            animation: slideInLeft 0.7s ease-out;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .case-card:nth-child(2) {
@@ -743,7 +771,7 @@
 
         .case-card:hover {
             box-shadow: 0 16px 40px rgba(231, 111, 81, 0.18);
-            transform: translateY(-8px);
+            transform: translateY(-12px) scale(1.02);
         }
 
         .case-title {
@@ -866,20 +894,23 @@
         }
 
         .case-hero-title {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             color: var(--color-primary);
             margin-bottom: 0.5rem;
             line-height: 1.2;
             letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .case-hero-subtitle {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--color-accent-main);
             font-weight: 600;
             margin-bottom: var(--spacing-lg);
             line-height: 1.3;
+            font-style: italic;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
         }
 
         .case-hero-meta {
@@ -926,18 +957,28 @@
             margin-bottom: var(--spacing-xl);
             line-height: 1.2;
             letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .case-hero-text {
-            font-size: 1.25rem;
-            line-height: 1.9;
+            font-size: 1.45rem;
+            line-height: 1.95;
             margin-bottom: var(--spacing-lg);
             color: var(--color-text);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-weight: 400;
         }
 
         .case-hero-text strong {
             color: var(--color-accent-main);
             font-weight: 700;
+            font-style: italic;
+        }
+
+        .case-hero-text em {
+            font-style: italic;
+            color: var(--color-accent-main);
+            font-weight: 600;
         }
 
         .case-scroll-hint {
@@ -1198,6 +1239,47 @@
             text-decoration: underline;
         }
 
+        /* GRAPHIC ACCENTS - SIMPLE & VISIBLE */
+        .graphic-accent {
+            position: fixed;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .graphic-accent-1 {
+            top: 15vh;
+            right: 8%;
+            width: 280px;
+            height: 280px;
+            opacity: 0.35;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .graphic-accent-2 {
+            top: 45vh;
+            left: 5%;
+            width: 250px;
+            height: 250px;
+            opacity: 0.38;
+            animation: float 10s ease-in-out infinite;
+            transform: rotate(45deg);
+        }
+
+        .graphic-accent-3 {
+            bottom: 20vh;
+            right: 6%;
+            width: 300px;
+            height: 300px;
+            opacity: 0.32;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .graphic-accent {
+                display: none;
+            }
+        }
+
         /* ACCESIBILIDAD */
         a:focus,
         button:focus {
@@ -1331,6 +1413,51 @@
     </nav>
 
     <main>
+        <!-- GRAPHIC ACCENTS -->
+        <div class="graphic-accent graphic-accent-1">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Estrella mágica -->
+                <g stroke="var(--color-accent-main)" stroke-width="3" fill="none" stroke-linecap="round">
+                    <!-- Líneas principales -->
+                    <line x1="200" y1="50" x2="200" y2="350"/>
+                    <line x1="50" y1="200" x2="350" y2="200"/>
+                    <!-- Líneas diagonales -->
+                    <line x1="100" y1="100" x2="300" y2="300"/>
+                    <line x1="300" y1="100" x2="100" y2="300"/>
+                    <!-- Círculo central -->
+                    <circle cx="200" cy="200" r="60" stroke="var(--color-accent-main)" stroke-width="2" fill="none"/>
+                    <circle cx="200" cy="200" r="80" stroke="var(--color-accent-main)" stroke-width="1" fill="none" opacity="0.5"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="graphic-accent graphic-accent-2">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ondas concéntricas -->
+                <g stroke="var(--color-accent-secondary)" stroke-width="2.5" fill="none" stroke-linecap="round">
+                    <circle cx="200" cy="200" r="40" opacity="0.8"/>
+                    <circle cx="200" cy="200" r="80" opacity="0.6"/>
+                    <circle cx="200" cy="200" r="120" opacity="0.4"/>
+                    <circle cx="200" cy="200" r="160" opacity="0.2"/>
+                </g>
+                <!-- Centro -->
+                <circle cx="200" cy="200" r="8" fill="var(--color-accent-secondary)" opacity="0.7"/>
+            </svg>
+        </div>
+
+        <div class="graphic-accent graphic-accent-3">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Espiral ascendente -->
+                <path d="M 200 350 Q 250 320 280 280 Q 300 250 300 200 Q 300 150 280 120 Q 250 80 200 50 Q 150 30 100 50 Q 60 80 50 130 Q 40 180 60 220 Q 90 260 140 280 Q 180 300 220 290"
+                      stroke="var(--color-accent-main)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <!-- Punta -->
+                <circle cx="220" cy="290" r="12" fill="var(--color-accent-main)" opacity="0.6"/>
+                <!-- Destellos -->
+                <circle cx="180" cy="100" r="6" fill="var(--color-accent-main)" opacity="0.4"/>
+                <circle cx="130" cy="160" r="5" fill="var(--color-accent-main)" opacity="0.3"/>
+            </svg>
+        </div>
+
         <!-- HERO - 3 SEGMENTOS -->
         <section id="hero" class="section" style="padding: 0; min-height: auto; display: block;">
             <!-- SEGMENTO 1: Presentación -->
