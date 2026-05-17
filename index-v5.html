@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carlos Céspedes — Arquitecto de sistemas humanos y operaciones complejas. Diseño y dirijo los programas, equipos y procesos que las organizaciones necesitan cuando crecen más rápido que su estructura.">
+    <title>Carlos Céspedes — Arquitecto de sistemas humanos</title>
+    <style>
+        :root {
+            --color-primary: #2d5f4f;
+            --color-accent: #d4a574;
+            --color-blue: #4a8fa0;
+            --color-coral: #d96d5a;
+            --color-purple: #8b6ba8;
+            --color-text: #2d2d2d;
+            --color-light-bg: #f5f3f0;
+            --color-white: #ffffff;
+            --color-border: #e8e8e8;
+            --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --line-height: 1.75;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: var(--line-height);
+            font-size: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ELEMENTOS VISUALES DE FONDO - Curvas C GRANDES Y PRESENTES */
+        .visual-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .visual-element {
+            position: absolute;
+            opacity: 0.28;
+        }
+
+        .visual-element svg {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+        }
+
+        /* SECCIÓN HERO */
+        .hero-visual-1 {
+            top: -150px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            opacity: 0.25;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* SECCIÓN TERRITORIOS */
+        .territories-visual {
+            bottom: -100px;
+            left: -250px;
+            width: 800px;
+            height: 800px;
+            opacity: 0.22;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* SECCIÓN DIFERENCIADOR */
+        .diferenciador-visual {
+            top: 50%;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            opacity: 0.26;
+            animation: float 7s ease-in-out infinite;
+            transform: rotate(45deg);
+        }
+
+        /* SECCIÓN CASOS */
+        .casos-visual {
+            bottom: 0;
+            left: -300px;
+            width: 900px;
+            height: 900px;
+            opacity: 0.24;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        /* SECCIÓN MÉTODO */
+        .metodo-visual {
+            top: 20%;
+            right: -200px;
+            width: 650px;
+            height: 650px;
+            opacity: 0.23;
+            animation: float 7.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .visual-element {
+                opacity: 0.15;
+            }
+            .hero-visual-1,
+            .territories-visual,
+            .diferenciador-visual,
+            .casos-visual,
+            .metodo-visual {
+                width: 60%;
+                height: 60%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .visual-element {
+                display: none;
+            }
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--color-white);
+            border-bottom: 3px solid var(--color-blue);
+            z-index: 100;
+            padding: var(--spacing-md) 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        nav.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            position: relative;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--color-blue);
+            border-bottom-color: var(--color-coral);
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        main {
+            overflow: visible;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            padding: var(--spacing-2xl) 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: var(--spacing-xl) 0;
+                min-height: auto;
+            }
+        }
+
+        /* SECCIONES CON FONDO ALTERNADO */
+        section:nth-child(even) {
+            background-color: var(--color-light-bg);
+        }
+
+        /* HERO */
+        #hero {
+            padding: 0;
+            background: linear-gradient(135deg, rgba(45, 95, 79, 0.02) 0%, rgba(74, 143, 160, 0.02) 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 800px;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-blue) 50%, var(--color-coral) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-blue);
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.3;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text);
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-description strong {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .hero-description strong::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-coral) 100%);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-coral) 100%);
+            color: var(--color-white);
+            padding: 1rem 2.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(74, 143, 160, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background: transparent;
+            color: var(--color-blue);
+            outline: none;
+            box-shadow: 0 12px 28px rgba(74, 143, 160, 0.25);
+            transform: translateY(-4px);
+            border-color: var(--color-blue);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            #hero {
+                min-height: 60vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+            .hero-description {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* HEADING */
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-coral) 100%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: var(--spacing-lg);
+            }
+            h3 {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* TERRITORIOS */
+        .territories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+
+        .territory {
+            padding: var(--spacing-xl);
+            background-color: var(--color-white);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 6px solid var(--color-blue);
+            box-shadow: 0 4px 16px rgba(74, 143, 160, 0.1);
+        }
+
+        .territory:nth-child(2) {
+            border-left-color: var(--color-coral);
+            box-shadow: 0 4px 16px rgba(217, 109, 90, 0.1);
+        }
+
+        .territory:nth-child(3) {
+            border-left-color: var(--color-purple);
+            box-shadow: 0 4px 16px rgba(139, 107, 168, 0.1);
+        }
+
+        .territory::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(74, 143, 160, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .territory:nth-child(2)::before {
+            background: radial-gradient(circle, rgba(217, 109, 90, 0.12) 0%, transparent 70%);
+        }
+
+        .territory:nth-child(3)::before {
+            background: radial-gradient(circle, rgba(139, 107, 168, 0.12) 0%, transparent 70%);
+        }
+
+        .territory:hover {
+            box-shadow: 0 12px 32px rgba(74, 143, 160, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .territory h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            position: relative;
+            z-index: 1;
+            font-size: 1.45rem;
+        }
+
+        .territory p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            z-index: 1;
+        }
+
+        .territory p strong {
+            color: var(--color-blue);
+            font-weight: 700;
+        }
+
+        .territory:nth-child(2) p strong {
+            color: var(--color-coral);
+        }
+
+        .territory:nth-child(3) p strong {
+            color: var(--color-purple);
+        }
+
+        @media (max-width: 1024px) {
+            .territories-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .territory {
+                padding: var(--spacing-lg);
+            }
+            .territory h3 {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* DIFERENCIADOR */
+        .diferenciador-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+            background: linear-gradient(135deg, rgba(74, 143, 160, 0.08) 0%, rgba(217, 109, 90, 0.04) 100%);
+            border-radius: 12px;
+            border-left: 6px solid var(--color-blue);
+        }
+
+        .diferenciador-frase {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .diferenciador-text {
+            font-size: 1.05rem;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.9;
+        }
+
+        .diferenciador-text strong {
+            color: var(--color-blue);
+            font-weight: 700;
+        }
+
+        .capacidades {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .capacidad {
+            padding: var(--spacing-md);
+            border-bottom: 4px solid var(--color-blue);
+            position: relative;
+        }
+
+        .capacidad:nth-child(2n) {
+            border-bottom-color: var(--color-coral);
+        }
+
+        .capacidad:nth-child(3n) {
+            border-bottom-color: var(--color-purple);
+        }
+
+        .capacidad h4 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary);
+            font-size: 1.05rem;
+        }
+
+        .capacidad p {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .diferenciador-frase {
+                font-size: 1.6rem;
+            }
+            .capacidades {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CASOS */
+        .cases-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+
+        .case-card {
+            padding: var(--spacing-xl);
+            background-color: var(--color-white);
+            border-left: 6px solid var(--color-blue);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(74, 143, 160, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card:nth-child(2) {
+            border-left-color: var(--color-coral);
+            box-shadow: 0 4px 16px rgba(217, 109, 90, 0.1);
+        }
+
+        .case-card:nth-child(3) {
+            border-left-color: var(--color-purple);
+            box-shadow: 0 4px 16px rgba(139, 107, 168, 0.1);
+        }
+
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(74, 143, 160, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .case-card:nth-child(2)::before {
+            background: radial-gradient(circle, rgba(217, 109, 90, 0.12) 0%, transparent 70%);
+        }
+
+        .case-card:nth-child(3)::before {
+            background: radial-gradient(circle, rgba(139, 107, 168, 0.12) 0%, transparent 70%);
+        }
+
+        .case-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-subtitle {
+            font-size: 0.85rem;
+            color: var(--color-text);
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-section {
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-blue);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-card:nth-child(2) .case-section-title {
+            color: var(--color-coral);
+        }
+
+        .case-card:nth-child(3) .case-section-title {
+            color: var(--color-purple);
+        }
+
+        .case-content p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        .case-content strong {
+            color: var(--color-blue);
+            font-weight: 700;
+        }
+
+        .case-card:nth-child(2) .case-content strong {
+            color: var(--color-coral);
+        }
+
+        .case-card:nth-child(3) .case-content strong {
+            color: var(--color-purple);
+        }
+
+        .case-learning {
+            padding-top: var(--spacing-md);
+            border-top: 3px solid var(--color-blue);
+            margin-top: var(--spacing-md);
+            color: var(--color-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-card:nth-child(2) .case-learning {
+            border-top-color: var(--color-coral);
+        }
+
+        .case-card:nth-child(3) .case-learning {
+            border-top-color: var(--color-purple);
+        }
+
+        .case-learning strong {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        /* MÉTODO */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+        }
+
+        .method-item {
+            padding: var(--spacing-xl);
+            background-color: var(--color-white);
+            border-left: 6px solid var(--color-blue);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(74, 143, 160, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .method-item:nth-child(2n) {
+            border-left-color: var(--color-coral);
+            box-shadow: 0 4px 16px rgba(217, 109, 90, 0.1);
+        }
+
+        .method-item:nth-child(3n) {
+            border-left-color: var(--color-purple);
+            box-shadow: 0 4px 16px rgba(139, 107, 168, 0.1);
+        }
+
+        .method-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(74, 143, 160, 0.15);
+        }
+
+        .method-item h3 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .method-item p {
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* TRAYECTORIA */
+        .trayectoria-item {
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            background-color: var(--color-white);
+            border-left: 6px solid var(--color-blue);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(74, 143, 160, 0.1);
+            position: relative;
+        }
+
+        .trayectoria-item:nth-child(2) {
+            border-left-color: var(--color-coral);
+            box-shadow: 0 4px 16px rgba(217, 109, 90, 0.1);
+        }
+
+        .trayectoria-item:nth-child(3) {
+            border-left-color: var(--color-purple);
+            box-shadow: 0 4px 16px rgba(139, 107, 168, 0.1);
+        }
+
+        .trayectoria-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 18px;
+            height: 18px;
+            background: var(--color-blue);
+            border-radius: 50%;
+            border: 4px solid var(--color-white);
+            box-shadow: 0 0 0 3px var(--color-blue);
+        }
+
+        .trayectoria-item:nth-child(2)::before {
+            background: var(--color-coral);
+            box-shadow: 0 0 0 3px var(--color-coral);
+        }
+
+        .trayectoria-item:nth-child(3)::before {
+            background: var(--color-purple);
+            box-shadow: 0 0 0 3px var(--color-purple);
+        }
+
+        .trayectoria-years {
+            font-size: 0.9rem;
+            color: var(--color-blue);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .trayectoria-item:nth-child(2) .trayectoria-years {
+            color: var(--color-coral);
+        }
+
+        .trayectoria-item:nth-child(3) .trayectoria-years {
+            color: var(--color-purple);
+        }
+
+        .trayectoria-item h3 {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .trayectoria-item p {
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.95rem;
+        }
+
+        .trayectoria-item strong {
+            color: var(--color-blue);
+            font-weight: 700;
+        }
+
+        .trayectoria-item:nth-child(2) strong {
+            color: var(--color-coral);
+        }
+
+        .trayectoria-item:nth-child(3) strong {
+            color: var(--color-purple);
+        }
+
+        /* NOTA PERSONAL */
+        .nota-personal {
+            background: linear-gradient(135deg, rgba(74, 143, 160, 0.06) 0%, transparent 100%);
+            padding: var(--spacing-xl);
+            border-radius: 12px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            max-width: 800px;
+            border-left: 6px solid var(--color-blue);
+        }
+
+        .actividades-grid {
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-xl);
+            border-top: 3px solid var(--color-blue);
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .actividad {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .actividad-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .actividad p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        /* CONTACTO */
+        #contacto {
+            background: linear-gradient(135deg, rgba(45, 95, 79, 0.03) 0%, rgba(74, 143, 160, 0.03) 100%);
+            min-height: auto;
+        }
+
+        .contacto-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contacto-content h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contacto-intro {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.8;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .cta-container p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contacto-alternatives {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-lg);
+            font-size: 0.95rem;
+        }
+
+        .contacto-alternatives a {
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 2px solid var(--color-blue);
+            transition: all 0.2s ease;
+            font-weight: 700;
+        }
+
+        .contacto-alternatives a:hover {
+            color: var(--color-blue);
+            border-bottom-color: var(--color-coral);
+        }
+
+        .disponibilidad {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 2px solid var(--color-blue);
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--color-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ACCESIBILIDAD */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--color-blue);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ELEMENTOS VISUALES DE FONDO - GRANDES Y PRESENTES -->
+    <div class="visual-container">
+        <!-- HERO C SHAPE -->
+        <div class="visual-element hero-visual-1">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 350 50 Q 350 200 150 200 Q 100 200 100 250" fill="none" stroke="#4a8fa0" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 380 100 Q 380 250 120 250 Q 60 250 60 310" fill="none" stroke="#4a8fa0" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+        </div>
+
+        <!-- TERRITORIOS C SHAPE -->
+        <div class="visual-element territories-visual">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 350 80 Q 350 200 120 200 Q 60 200 60 260" fill="none" stroke="#d96d5a" stroke-width="9" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- DIFERENCIADOR C SHAPE -->
+        <div class="visual-element diferenciador-visual">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 320 100 Q 320 200 100 200 Q 50 200 50 250" fill="none" stroke="#4a8fa0" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 350 150 Q 350 220 80 220 Q 40 220 40 270" fill="none" stroke="#d96d5a" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+            </svg>
+        </div>
+
+        <!-- CASOS C SHAPE -->
+        <div class="visual-element casos-visual">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 360 60 Q 360 200 120 200 Q 50 200 50 270" fill="none" stroke="#8b6ba8" stroke-width="9" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- MÉTODO C SHAPE -->
+        <div class="visual-element metodo-visual">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 340 80 Q 340 210 100 210 Q 40 210 40 280" fill="none" stroke="#4a8fa0" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">CC</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#territorios">Territorios</a></li>
+                <li><a href="#casos">Casos</a></li>
+                <li><a href="#metodo">Método</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Carlos Céspedes</h1>
+                    <p class="hero-subtitle">Arquitecto de sistemas humanos y operaciones complejas.</p>
+                    <p class="hero-description">Diseño y dirijo los programas, equipos y procesos que las organizaciones necesitan cuando crecen más rápido que su estructura. Durante 14 años he trabajado en la intersección de dirección creativa, diseño de experiencias educativas y construcción de arquitecturas organizacionales.</p>
+                    <p class="hero-description">Lo que distingue mi trabajo no es solo entender los problemas: es <strong>hacer que las soluciones ocurran</strong>. Mi rol no es diagnosticar desde afuera ni ejecutar desde adentro — es hacer ambas cosas juntas.</p>
+                    <p><a href="#contacto" class="cta-button">Agendar 20 minutos</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERRITORIOS -->
+        <section id="territorios" class="section">
+            <div class="container">
+                <h2>¿Te suena alguno de estos territorios?</h2>
+                <div class="territories-grid">
+                    <div class="territory">
+                        <h3>Creciste más rápido que tu estructura.</h3>
+                        <p>Tu equipo está cumpliendo, pero a costa del desgaste de las pocas personas que sostienen todo. Los procesos dependen de caras clave. Cada decisión importante genera fricción interáreas.</p>
+                        <p><strong>Yo diseño sistemas mientras el edificio ya está en uso.</strong></p>
+                    </div>
+                    <div class="territory">
+                        <h3>Tienes una visión ambiciosa que no aterriza.</h3>
+                        <p>Una propuesta clara, una idea de producto, un proyecto de impacto. Pero el equipo no logra pasar de la aspiración a lo concreto, medible, entregable.</p>
+                        <p><strong>Yo ayudo a aterrizar: conectar visión con números reales y capacidades verificables.</strong></p>
+                    </div>
+                    <div class="territory">
+                        <h3>Tu producto educativo no escala sin romperse.</h3>
+                        <p>El piloto fue un éxito. Pero al replicarlo, algo se quiebra. Los procesos son demasiado intuitivos, las métricas son anecdóticas, cada edición requiere reinventar.</p>
+                        <p><strong>Yo construyo artefactos centralizadores: documentación que permite replicar sin perder sentido.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFERENCIADOR -->
+        <section id="diferenciador" class="section">
+            <div class="container">
+                <h2>Por qué yo</h2>
+                <div class="diferenciador-container">
+                    <p class="diferenciador-frase">Veo lo sistémico donde otros ven caos.<br/>Estructura sin heroísmo. Avanzo sin cargar.</p>
+                    <p class="diferenciador-text">Tengo lucidez para leer lo que el equipo no nombra, capacidad para estructurar desde tres planos simultáneamente (estrategia, táctica, operación), y no me vuelvo la prótesis que carga con lo que otros deberían asumir.</p>
+                    <p class="diferenciador-text">Eso se traduce en <strong>seis capacidades</strong> que raramente aparecen juntas:</p>
+                    <div class="capacidades">
+                        <div class="capacidad">
+                            <h4>Panorama integrado</h4>
+                            <p>Mantengo el cuadro completo y conecto piezas que no se hablan.</p>
+                        </div>
+                        <div class="capacidad">
+                            <h4>Traductor entre disciplinas</h4>
+                            <p>Hablo financiero, pedagógico, técnico y comercial — sin reducir la sustancia.</p>
+                        </div>
+                        <div class="capacidad">
+                            <h4>Sistemas que enseñan</h4>
+                            <p>Los artefactos que diseño son instrumentos de aprendizaje del equipo.</p>
+                        </div>
+                        <div class="capacidad">
+                            <h4>Detecto sesgos</h4>
+                            <p>Identifico puntos ciegos sin descalificar a las personas.</p>
+                        </div>
+                        <div class="capacidad">
+                            <h4>Consciencia cultural</h4>
+                            <p>Cuido la palabra exacta porque las palabras definen postura.</p>
+                        </div>
+                        <div class="capacidad">
+                            <h4>Diagnóstico sin desbalancear</h4>
+                            <p>Leo sistemas vivos e identifico fricción real.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASOS -->
+        <section id="casos" class="section">
+            <div class="container">
+                <h2>Tres casos de impacto</h2>
+                <div class="cases-container">
+                    <!-- FICAIJ -->
+                    <div class="case-card">
+                        <h3 class="case-title">FICAIJ — Festival de Cine Infantil</h3>
+                        <p class="case-subtitle">2009–2022 | 13 años, 6+ países</p>
+                        <div class="case-section">
+                            <div class="case-section-title">La oportunidad que vi</div>
+                            <div class="case-content">
+                                <p>Las familias experimentaban el audiovisual de formas muy distintas a las que los espacios educativos ofrecían. Había una <strong>oportunidad de construir puentes</strong> reales.</p>
+                            </div>
+                        </div>
+                        <div class="case-section">
+                            <div class="case-section-title">Lo que construí</div>
+                            <div class="case-content">
+                                <p>Creé <strong>un ecosistema de aprendizaje</strong>: escuela de audiovisual, alianzas institucionales, programa de formación, red de conexiones reales — no solo exhibición.</p>
+                            </div>
+                        </div>
+                        <div class="case-learning">
+                            <strong>El aprendizaje:</strong> La comunicación abierta y humana son el cimiento. Aprendí a leer la audiencia real. Cuando las organizaciones no entienden quién es su audiencia y por qué debería importarles, todo lo demás se quiebra.
+                        </div>
+                    </div>
+
+                    <!-- PLATZI -->
+                    <div class="case-card">
+                        <h3 class="case-title">PLATZI — Quality & Content Systems</h3>
+                        <p class="case-subtitle">2019–2023 | 400 personas, escala global</p>
+                        <div class="case-section">
+                            <div class="case-section-title">La oportunidad que vi</div>
+                            <div class="case-content">
+                                <p>Observé una <strong>oportunidad en cómo se garantiza la calidad</strong> a través de múltiples equipos. La velocidad no había permitido formalizar un lenguaje compartido.</p>
+                            </div>
+                        </div>
+                        <div class="case-section">
+                            <div class="case-section-title">Lo que construí</div>
+                            <div class="case-content">
+                                <p>Rediseñé la función como <strong>"Quality Assurance & Content Management"</strong> — sistema centralizado, indicadores compartidos, visibilidad estratégica.</p>
+                            </div>
+                        </div>
+                        <div class="case-learning">
+                            <strong>El aprendizaje:</strong> Un sistema perfecto sin sostenibilidad política es un prototipo, no transformación. El diagnóstico es 40%, el 60% es hacerlo visible y sostenerlo hasta que se profesionalice sin ti.
+                        </div>
+                    </div>
+
+                    <!-- CRITERTEC -->
+                    <div class="case-card">
+                        <h3 class="case-title">CRITERTEC — Arquitectura Organizacional</h3>
+                        <p class="case-subtitle">2023–Presente | Soy Digital RD + transformación</p>
+                        <div class="case-section">
+                            <div class="case-section-title">La oportunidad que vi</div>
+                            <div class="case-content">
+                                <p>Observé una <strong>oportunidad en hacer explícita y transferible</strong> la cultura, el talento y conocimiento que ya existían en la empresa.</p>
+                            </div>
+                        </div>
+                        <div class="case-section">
+                            <div class="case-section-title">Lo que construí</div>
+                            <div class="case-content">
+                                <p>Tres frentes: <strong>Sistema de talento</strong>, <strong>infraestructura de conocimiento</strong>, y <strong>facilitación de conversaciones</strong> sobre estructura, cultura y eficiencia.</p>
+                            </div>
+                        </div>
+                        <div class="case-learning">
+                            <strong>El aprendizaje:</strong> Mi valor no está en arreglar todo. Está en estructurar de tal forma que otros puedan seguir sin mí. Las brechas más profundas son de visibilidad sistémica.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTODO -->
+        <section id="metodo" class="section">
+            <div class="container">
+                <h2>Mi forma de trabajar</h2>
+                <div class="method-grid">
+                    <div class="method-item">
+                        <h3>1. Lucidez antes que velocidad.</h3>
+                        <p>No acelero decisiones sin claridad compartida. Una decisión bien entendida es más rápida que diez mal explicadas.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>2. Lectura sistémica, no síntomas.</h3>
+                        <p>Me pregunto: ¿cuál es el patrón de fondo? ¿Qué tres planos está atravesando? Mi trabajo es nombrar lo invisible.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>3. Arquitectura que no depende de mí.</h3>
+                        <p>Diseño sistemas para que funcionen sin convertirme en prótesis. Mi objetivo es hacer mi rol innecesario.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>4. Acompañamiento con límite sano.</h3>
+                        <p>Puedo colaborar, leer, nombrar, orientar. Pero trabajo hasta donde esa colaboración siga siendo limpia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAYECTORIA -->
+        <section id="trayectoria" class="section">
+            <div class="container">
+                <h2>De dónde vengo, y por qué importa</h2>
+                <div>
+                    <div class="trayectoria-item">
+                        <p class="trayectoria-years">2009–2022</p>
+                        <h3>Audiovisuales, festivales, infancias</h3>
+                        <p><strong>Capacidades:</strong> Dirección con criterio. Construcción desde cero. Lectura profunda de audiencias. Articulación multidisciplinaria.</p>
+                        <p><strong>Aprendizaje:</strong> A sostener visión en contextos adversos. A entender que las experiencias significativas se diseñan.</p>
+                    </div>
+                    <div class="trayectoria-item">
+                        <p class="trayectoria-years">2019–2023</p>
+                        <h3>Producto digital y aprendizaje a escala</h3>
+                        <p><strong>Capacidades:</strong> Pensamiento de producto. Escalabilidad. Control de calidad desde patrones. Coordinación multi-stakeholder.</p>
+                        <p><strong>Aprendizaje:</strong> Que un producto de millones requiere arquitectura. Que las fricciones señalan falta de lenguaje común.</p>
+                    </div>
+                    <div class="trayectoria-item">
+                        <p class="trayectoria-years">2023–Presente</p>
+                        <h3>Arquitectura organizacional y operaciones</h3>
+                        <p><strong>Capacidades:</strong> Lectura de sistemas en tres planos. Diseño de cultura. Construcción de equipos en territorio.</p>
+                        <p><strong>Aprendizaje:</strong> A diseñar mientras el edificio está en uso. A nombrar sin confrontar.</p>
+                    </div>
+                    <p style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 3px solid var(--color-blue); font-size: 1.1rem;"><strong>La suma:</strong> Un perfil que mezcla dirección creativa + pensamiento de producto + arquitectura organizacional + ejecución real. Esa mezcla es rara.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTA PERSONAL -->
+        <section class="section">
+            <div class="container">
+                <h2>Más allá del trabajo</h2>
+                <div class="nota-personal">
+                    <p>Soy obsesivo con cómo funcionan realmente los sistemas. Rechazo lo genérico, lo corporate, lo que suena bonito pero no tiene piso. Me interesa lo interdisciplinario: educación, contenidos, cultura, infancias, familias, impacto real.</p>
+                    <div class="actividades-grid">
+                        <div class="actividad">
+                            <span class="actividad-icon">📚</span>
+                            <p>Leyendo — ensayos sobre sistemas, educación, antropología, narrativa.</p>
+                        </div>
+                        <div class="actividad">
+                            <span class="actividad-icon">🎧</span>
+                            <p>Escuchando podcasts — sobre pensamiento complejo, diseño, cultura.</p>
+                        </div>
+                        <div class="actividad">
+                            <span class="actividad-icon">🏊</span>
+                            <p>Nadando — mi forma de pensar mientras el cuerpo se mueve.</p>
+                        </div>
+                        <div class="actividad">
+                            <span class="actividad-icon">🐕</span>
+                            <p>Paseando con mis perritas — ellas me sacan de la cabeza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <div class="contacto-content">
+                    <h2>¿Tu organización está en uno de esos territorios?</h2>
+                    <p class="contacto-intro">Si reconociste tu situación en alguno de los tres dolores — crecimiento sin estructura, visión que no aterriza, producto que no escala — probablemente valga la pena tener una conversación.</p>
+                    <div class="cta-container">
+                        <p>Agenда una llamada de 20 minutos. No es reunión de venta — es conversación para entender si lo que necesitas se parece a algo en lo que pueda ayudar.</p>
+                        <a href="https://calendly.com/ccespedesvc/20min" class="cta-button" target="_blank" rel="noopener noreferrer">Agendar en Calendly</a>
+                    </div>
+                    <p style="text-align: center; margin-bottom: var(--spacing-lg); font-size: 0.95rem;">Si prefieres otra forma de contacto:</p>
+                    <div class="contacto-alternatives">
+                        <a href="mailto:ccespedesvc@gmail.com">Email</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <div class="disponibilidad">
+                        <p><strong>Disponibilidad:</strong> Full-time en organización nueva, fractional como COO part-time, consultoría por proyecto, o mezcla.</p>
+                        <p style="margin-top: var(--spacing-sm);">Preferentemente remota o presencial en LATAM.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Carlos Céspedes. Hecho con criterio.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollY = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
