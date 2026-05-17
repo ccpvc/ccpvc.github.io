@@ -112,6 +112,44 @@
             animation: float 9.5s ease-in-out infinite;
         }
 
+        .tren-rieles {
+            bottom: 15%;
+            right: -300px;
+            width: 1000px;
+            height: 600px;
+            opacity: 0.2;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .tren-locomotora {
+            top: 35%;
+            left: -250px;
+            width: 900px;
+            height: 500px;
+            opacity: 0.19;
+            animation: float 11s ease-in-out infinite;
+        }
+
+        .magia-varita {
+            top: 15%;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            opacity: 0.21;
+            animation: float 10s ease-in-out infinite;
+            transform: rotate(-25deg);
+        }
+
+        .magia-escoba {
+            bottom: 10%;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            opacity: 0.18;
+            animation: float 13s ease-in-out infinite;
+            transform: rotate(15deg);
+        }
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0px);
@@ -1206,6 +1244,76 @@
                 <path d="M 340 80 Q 340 210 100 210 Q 40 210 40 280" fill="none" stroke="#4a8fa0" stroke-width="8" stroke-linecap="round"/>
             </svg>
         </div>
+        <div class="visual-element tren-rieles">
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Rieles del tren -->
+                <line x1="50" y1="150" x2="550" y2="150" stroke="#c4a57b" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+                <line x1="50" y1="200" x2="550" y2="200" stroke="#c4a57b" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+                <!-- Travesaños -->
+                <line x1="80" y1="140" x2="80" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="150" y1="140" x2="150" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="220" y1="140" x2="220" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="290" y1="140" x2="290" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="360" y1="140" x2="360" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="430" y1="140" x2="430" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <line x1="500" y1="140" x2="500" y2="210" stroke="#b8956a" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <!-- Estaciones (círculos) -->
+                <circle cx="100" cy="175" r="25" stroke="#d4a574" stroke-width="3" fill="none" opacity="0.7"/>
+                <circle cx="280" cy="175" r="25" stroke="#d4a574" stroke-width="3" fill="none" opacity="0.7"/>
+                <circle cx="460" cy="175" r="25" stroke="#d4a574" stroke-width="3" fill="none" opacity="0.7"/>
+            </svg>
+        </div>
+        <div class="visual-element tren-locomotora">
+            <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                <!-- Locomotora simplificada -->
+                <!-- Cuerpo -->
+                <rect x="80" y="120" width="280" height="100" rx="15" stroke="#c4a57b" stroke-width="4" fill="none" opacity="0.7"/>
+                <!-- Cabina -->
+                <rect x="330" y="100" width="80" height="80" rx="10" stroke="#c4a57b" stroke-width="4" fill="none" opacity="0.7"/>
+                <!-- Ruedas grandes -->
+                <circle cx="140" cy="240" r="35" stroke="#c4a57b" stroke-width="3" fill="none" opacity="0.6"/>
+                <circle cx="240" cy="240" r="35" stroke="#c4a57b" stroke-width="3" fill="none" opacity="0.6"/>
+                <!-- Ruedas pequeñas (dirección) -->
+                <circle cx="360" cy="240" r="20" stroke="#c4a57b" stroke-width="2" fill="none" opacity="0.5"/>
+                <!-- Chimenea -->
+                <rect x="200" y="60" width="25" height="60" rx="8" stroke="#c4a57b" stroke-width="3" fill="none" opacity="0.6"/>
+                <!-- Humo -->
+                <circle cx="212" cy="40" r="15" stroke="#c4a57b" stroke-width="2" fill="none" opacity="0.4"/>
+                <circle cx="225" cy="25" r="12" stroke="#c4a57b" stroke-width="2" fill="none" opacity="0.3"/>
+            </svg>
+        </div>
+        <div class="visual-element magia-varita">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Varita mágica -->
+                <!-- Palo -->
+                <path d="M 200 350 Q 180 250 160 150 Q 150 80 140 20" fill="none" stroke="#8b6ba8" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+                <!-- Punta (estrella) -->
+                <path d="M 140 20 L 150 40 L 130 35 L 145 50 L 125 45 L 140 55 L 130 65 L 150 60 L 145 75 L 165 65" stroke="#8b6ba8" stroke-width="3" fill="none" opacity="0.7"/>
+                <!-- Brillo/destello -->
+                <circle cx="140" cy="20" r="20" stroke="#8b6ba8" stroke-width="2" fill="none" opacity="0.4"/>
+                <!-- Línea de magia -->
+                <path d="M 145 50 Q 130 100 150 150 Q 170 200 160 250" fill="none" stroke="#8b6ba8" stroke-width="2" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5"/>
+            </svg>
+        </div>
+        <div class="visual-element magia-escoba">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Escoba mágica -->
+                <!-- Palo -->
+                <path d="M 50 350 L 200 50" stroke="#7a6b8f" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <!-- Cerdas -->
+                <path d="M 180 80 Q 170 100 175 130" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.5"/>
+                <path d="M 190 70 Q 185 100 195 140" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.5"/>
+                <path d="M 200 65 Q 200 100 210 140" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.5"/>
+                <path d="M 210 70 Q 215 100 215 140" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.5"/>
+                <path d="M 220 80 Q 225 105 220 140" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.5"/>
+                <!-- Nudo (donde se atan las cerdas) -->
+                <ellipse cx="200" cy="145" rx="40" ry="25" stroke="#7a6b8f" stroke-width="3" fill="none" opacity="0.6"/>
+                <!-- Destello de magia -->
+                <circle cx="200" cy="50" r="30" stroke="#7a6b8f" stroke-width="2" fill="none" opacity="0.3"/>
+                <circle cx="150" cy="100" r="20" stroke="#7a6b8f" stroke-width="1" fill="none" opacity="0.2"/>
+                <circle cx="250" cy="110" r="18" stroke="#7a6b8f" stroke-width="1" fill="none" opacity="0.2"/>
+            </svg>
+        </div>
     </div>
 
     <!-- NAVEGACIÓN -->
@@ -1223,17 +1331,36 @@
     </nav>
 
     <main>
-        <!-- HERO -->
-        <section id="hero" class="section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Carlos Céspedes</h1>
-                    <p style="font-size: 1.1rem; font-style: italic; color: var(--color-primary); opacity: 0.8; margin-bottom: var(--spacing-md);">Pero puedes llamarme CC.</p>
-                    <p class="hero-subtitle">Arquitecto de sistemas humanos y operaciones complejas.</p>
-                    <p class="hero-description">Diseño y dirijo los programas, equipos y procesos que las organizaciones necesitan cuando crecen más rápido que su estructura.</p>
-                    <p class="hero-description">Durante 17 años he trabajado en la intersección de dirección creativa y dirección operativa, diseño de experiencias educativas y construcción de arquitecturas organizacionales. Lo que distingue mi trabajo no es solo entender los problemas: es <strong>hacer que las soluciones ocurran</strong>.</p>
-                    <p class="hero-description">Mi rol no es diagnosticar desde afuera ni ejecutar desde adentro — es hacer ambas cosas juntas.</p>
-                    <p><a href="#contacto" class="cta-button">Empecemos ya</a></p>
+        <!-- HERO - 3 SEGMENTOS -->
+        <section id="hero" class="section" style="padding: 0; min-height: auto; display: block;">
+            <!-- SEGMENTO 1: Presentación -->
+            <div style="min-height: 100vh; display: flex; align-items: center; padding: var(--spacing-2xl) var(--spacing-lg); background: var(--color-white); position: relative; z-index: 1;">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Carlos Céspedes</h1>
+                        <p style="font-size: 1.1rem; font-style: italic; color: var(--color-primary); opacity: 0.8; margin-bottom: var(--spacing-md);">Pero puedes llamarme CC.</p>
+                        <p class="hero-subtitle">Sistemas humanos y operaciones complejas</p>
+                        <p class="hero-description">Diseño y dirijo los programas, equipos y procesos que las organizaciones necesitan cuando crecen más rápido que su estructura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEGMENTO 2: Trayectoria y propuesta -->
+            <div style="min-height: 100vh; display: flex; align-items: center; padding: var(--spacing-2xl) var(--spacing-lg); background-color: var(--color-light-bg); position: relative; z-index: 1;">
+                <div class="container">
+                    <div class="hero-content" style="max-width: 850px;">
+                        <p class="hero-description">Durante 17 años he trabajado en la intersección de dirección creativa y dirección operativa, diseño de experiencias educativas y construcción de productos y arquitectura organizacionales. Lo que distingue mi trabajo no es solo entender los problemas: es <strong>hacer que las soluciones ocurran</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEGMENTO 3: Rol y CTA -->
+            <div style="min-height: 100vh; display: flex; align-items: center; padding: var(--spacing-2xl) var(--spacing-lg); background: var(--color-white); position: relative; z-index: 1;">
+                <div class="container">
+                    <div class="hero-content" style="max-width: 850px;">
+                        <p class="hero-description">Mi rol no es diagnosticar desde afuera ni ejecutar desde adentro — es hacer ambas cosas juntas.</p>
+                        <p><a href="#contacto" class="cta-button">Empecemos ya</a></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1351,7 +1478,7 @@
         <!-- CASOS -->
         <section id="casos" class="section">
             <div class="container">
-                <h2>Tres casos de impacto y aprendizaje</h2>
+                <h2>Cuatro casos de impacto y aprendizaje</h2>
                 <div class="cases-container">
                     <!-- FICAIJ — FULLSCREEN HERO SECTIONS -->
                     <div class="case-fullscreen" id="ficaij">
@@ -1377,7 +1504,7 @@
                         <div class="case-hero-section">
                             <div class="case-hero-content">
                                 <h4 class="case-section-heading">La oportunidad que vi</h4>
-                                <p class="case-hero-text">Las familias e infancias en la región experimentaban el audiovisual de formas muy distintas a las que los espacios educativos y culturales ofrecían. Había una <strong>oportunidad enorme de construir puentes reales</strong> entre lo que vivían y lo que podían acceder institucional y culturalmente.</p>
+                                <p class="case-hero-text">Las familias, las infancias y las instituciones educativas en Venezuela experimentan el audiovisual de formas muy distintas las que los espacios productivos y culturales ofrecen. Hay una <strong>oportunidad enorme de construir puentes reales</strong> entre lo que viven y a lo que pueden acceder institucional y culturalmente.</p>
                             </div>
                             <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
@@ -1387,8 +1514,8 @@
                             <div class="case-hero-content">
                                 <h4 class="case-section-heading">Lo que construí</h4>
                                 <p class="case-hero-text">En lugar de quedarme solo como festival de exhibición, creé <strong>un ecosistema completo de aprendizaje</strong>:</p>
-                                <p class="case-hero-text">Una escuela de audiovisual infantil que funcionaba como brazo de investigación del festival. Alianzas con instituciones clave (Laboratorio del SIRI, Fundación Regional del Niño). Un programa de formación anclado en el Palacio de los Niños. Una red que permitía viajar por el país construyendo conexiones reales con comunidades educativas.</p>
-                                <p class="case-hero-text"><strong>El artefacto clave:</strong> No era "cine + exhibición". Era "cine + formación + investigación + comunidad".</p>
+                                <p class="case-hero-text">Una escuela de audiovisual infantil que funcionaba como brazo de investigación del festival. Alianzas con instituciones clave (Laboratorio del Cine y del Audiovisual, Centro Nacional Autónomo de Cinematografía, Fundación Cinemateca Nacional, Fundación Regional del Niño, Mérida, el Palacio de los Niños, Mérida). Un programa de formación anclado en el Palacio de los Niños. Una red que permitía viajar por el país construyendo conexiones reales con comunidades educativas.</p>
+                                <p class="case-hero-text"><strong>El artefacto clave:</strong> No era "cine + exhibición". Era "audiovisual + cocreación + formación + investigación + comunidad".</p>
                             </div>
                             <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
@@ -1412,73 +1539,165 @@
                         </div>
                     </div>
 
-                    <!-- PLATZI -->
-                    <div class="case-card">
-                        <h3 class="case-title"><svg viewBox="0 0 24 24" width="36" height="36" style="display: inline; margin-right: 0.5rem; vertical-align: -4px;"><path d="M6 4c-2 0-2 8-2 8s0 8 2 8" stroke="var(--color-accent-secondary)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M10 6L18 10M10 10L18 14M10 14L18 18" stroke="var(--color-accent-secondary)" stroke-width="2" stroke-linecap="round"/></svg>PLATZI — Quality & Content Systems</h3>
-                        <p class="case-subtitle">2019–2023 | 400 personas, educación digital global</p>
-
-                        <div class="case-section">
-                            <div class="case-section-title">La oportunidad que vi</div>
-                            <div class="case-content">
-                                <p>Platzi tiene una fórmula pedagógica clara y una velocidad increíble. Pero observé que había una <strong>oportunidad importante en cómo se garantiza la calidad del contenido</strong> a través de múltiples equipos (Learning, Production, Success, Marketing).</p>
-                                <p>Los equipos trabajaban bien, pero sin un lenguaje compartido sobre calidad. No había una forma clara de que todos — desde productores hasta estudiantes — entendieran cómo se aseguraba y mejoraba la calidad.</p>
+                    <!-- WIKR GROUP -->
+                    <div class="case-fullscreen" id="wikr-group">
+                        <!-- Sección 1: Hero + Contexto -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h3 class="case-hero-title"><svg viewBox="0 0 24 24" width="48" height="48" style="display: inline; margin-right: 1rem; vertical-align: -6px;"><path d="M6 4c-2 0-2 8-2 8s0 8 2 8" stroke="var(--color-accent-secondary)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="12" cy="7" r="2" stroke="var(--color-accent-secondary)" stroke-width="2" fill="none"/><path d="M10 11L14 11M10 15L14 15" stroke="var(--color-accent-secondary)" stroke-width="2" stroke-linecap="round"/></svg>WIKR GROUP</h3>
+                                <p class="case-hero-subtitle">Contenidos Virales Globales</p>
+                                <p class="case-hero-meta">2016–2018 | Agencia Multinacional | Escritura y Traducción</p>
+                                <div class="case-hero-metrics">
+                                    <div class="metric"><strong>+1,600</strong><span>contenidos escritos</span></div>
+                                    <div class="metric"><strong>+16M</strong><span>visualizaciones globales</span></div>
+                                    <div class="metric"><strong>12</strong><span>idiomas atendidos</span></div>
+                                    <div class="metric"><strong>5</strong><span>continentes</span></div>
+                                </div>
                             </div>
+                            <p class="case-scroll-hint">↓ Desplaza para continuar</p>
                         </div>
 
-                        <div class="case-section">
-                            <div class="case-section-title">Lo que construí</div>
-                            <div class="case-content">
-                                <p>Rediseñé la función de revisión de contenidos: la rebautizé de "Associates" a <strong>"Quality Assurance & Content Management"</strong> — profesionalizándola, haciéndola visible como función estratégica en lugar de soporte administrativo.</p>
-                                <p>Creé un sistema centralizado que unificaba subtituladores + revisores de contenido + stakeholders. Desarrollé indicadores que servían simultáneamente a Learning (qué mejorar), Production (cómo hacerlo más eficiente), Marketing (qué comunicar) y Success (cómo venderlo). Cada métrica respondía una pregunta clara: ¿dónde está la fricción real?</p>
-                                <p><strong>El artefacto clave:</strong> Un sistema donde la calidad se media, se hacía visible y se mejoraba como instrumento de alineación — no solo como checklist de revisión.</p>
+                        <!-- Sección 2: La oportunidad -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">La oportunidad que vi</h4>
+                                <p class="case-hero-text">Wikr Group era una agencia de creación de contenidos virales que operaba globalmente. Mi rol: escribir y traducir contenidos al español, pero también asegurar que el mensaje original se mantuviera vivo en la traducción — sin perder el tono, la intención, el impacto cultural.</p>
+                                <p class="case-hero-text">La oportunidad no era solo traducir. Era <strong>garantizar que el contenido viajara culturalmente</strong> — que un meme en inglés no perdiera su efecto cuando llegaba a audiencias hispanohablantes.</p>
                             </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
 
-                        <div class="case-section">
-                            <div class="case-section-title">Resultado</div>
-                            <div class="case-content">
-                                <p>Sistema funcionando con métricas claras que todos entendían. Reducción observable de errores en áreas con seguimiento consistente. Un modelo de calidad que servía como brújula para múltiples áreas. Experiencia operando en contextos globales, remotos, multiidioma.</p>
+                        <!-- Sección 3: Lo que construí -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Lo que construí</h4>
+                                <p class="case-hero-text">Desarrollé más de 1,600 contenidos escritos originales y traducciones que <strong>viajaron a 16+ millones de visualizaciones a nivel mundial</strong>. Todo en español — escritos originales para mercados hispanohablantes, o traducciones del inglés que mantenían el espíritu viral del original.</p>
+                                <p class="case-hero-text">Trabajé en equipo multinacional, multiidioma, en contexto remoto y de alta velocidad. Cada contenido era una pieza en un rompecabezas de alcance global: la idea era una, pero la ejecución local era clave.</p>
+                                <p class="case-hero-text"><strong>El artefacto clave:</strong> No era solo traducción. Era creación de contenido que respetaba el código cultural local manteniendo el mensaje global.</p>
                             </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
 
-                        <div class="case-learning">
-                            <strong>El aprendizaje que sigo usando:</strong> Un sistema perfecto sin sostenibilidad política es un prototipo, no una transformación. El diagnóstico es solo el 40% del trabajo — el 60% es hacerlo visible, enseñar a otros a verlo, y sostenerlo hasta que se profesionalice sin ti. Hoy, cuando estructuro algo, me pregunto: ¿Quién sostiene esto cuando yo no estoy? ¿Es lo suficientemente visible para que otros lo cuiden y lo evolucionen?
+                        <!-- Sección 4: Resultado -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Resultado</h4>
+                                <p class="case-hero-text">Contenidos que aterrizaban. Tasas de engagement similares al original en idiomas diferentes. Un cuerpo de trabajo de más de 1,600 piezas que demostraban que la calidad de escritura y traducción no es un costo — es un activo.</p>
+                                <p class="case-hero-text">Aprendí que en equipos remotos, multilingües y de alto volumen, la claridad de la comunicación escrita no es un lujo — es la infraestructura misma del trabajo.</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
+                        </div>
+
+                        <!-- Sección 5: Aprendizaje -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">El aprendizaje que sigo usando</h4>
+                                <p class="case-hero-text">La palabra precisa no es un detalhe — es una decisión estratégica. En contextos globales, el idioma no es un canal de transmisión. Es una puerta a cómo una cultura respira, entiende, se siente convocada. Hoy, cuando escribo para equipos multilingües o creo contenido que viaja, me hago la misma pregunta: ¿Esta palabra/esta estructura/este tono va a resoñar en el contexto donde vive?</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- CRITERTEC -->
-                    <div class="case-card">
-                        <h3 class="case-title"><svg viewBox="0 0 24 24" width="36" height="36" style="display: inline; margin-right: 0.5rem; vertical-align: -4px;"><path d="M6 4c-2 0-2 8-2 8s0 8 2 8" stroke="var(--color-accent-main)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="10" y="6" width="8" height="12" stroke="var(--color-accent-main)" stroke-width="2" fill="none"/><line x1="14" y1="6" x2="14" y2="18" stroke="var(--color-accent-main)" stroke-width="2"/><line x1="10" y1="12" x2="18" y2="12" stroke="var(--color-accent-main)" stroke-width="2"/></svg>CRITERTEC — Arquitectura Organizacional</h3>
-                        <p class="case-subtitle">2023–Presente | Soy Digital RD + transformación operativa</p>
-
-                        <div class="case-section">
-                            <div class="case-section-title">La oportunidad que vi</div>
-                            <div class="case-content">
-                                <p>Critertec es una empresa joven, ágil, con gente talentosa. Mientras la empresa crecía, muchas cosas funcionaban de formas implícitas e informales — lo que es natural en equipos en expansión rápida. Observé una <strong>oportunidad en hacer explícita y transferible</strong> la cultura, el talento y el conocimiento que ya existían en la empresa.</p>
-                                <p>Había brecha entre cómo la empresa se veía a sí misma y cómo funcionaba realmente. Muchas cosas daban resultado, pero nadie podía replicarlas ni explicarlas claramente a nuevas personas.</p>
+                    <!-- PLATZI — FULLSCREEN HERO SECTIONS -->
+                    <div class="case-fullscreen" id="platzi">
+                        <!-- Sección 1: Hero + Contexto -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h3 class="case-hero-title"><svg viewBox="0 0 24 24" width="48" height="48" style="display: inline; margin-right: 1rem; vertical-align: -6px;"><path d="M6 4c-2 0-2 8-2 8s0 8 2 8" stroke="var(--color-accent-secondary)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M10 6L18 10M10 10L18 14M10 14L18 18" stroke="var(--color-accent-secondary)" stroke-width="2" stroke-linecap="round"/></svg>PLATZI</h3>
+                                <p class="case-hero-subtitle">Quality & Content Systems</p>
+                                <p class="case-hero-meta">2019–2023 | Millones de estudiantes | Educación digital tecnológica para la región</p>
                             </div>
+                            <p class="case-scroll-hint">↓ Desplaza para continuar</p>
                         </div>
 
-                        <div class="case-section">
-                            <div class="case-section-title">Lo que construí</div>
-                            <div class="case-content">
-                                <p>Trabajé en tres frentes simultáneamente:</p>
-                                <p><strong>(1) Sistema de talento</strong> — algo que no existía: proceso claro de atracción, selección, evaluación, desarrollo. Onboarding estructurado. Evaluaciones periódicas con desarrollo plan.</p>
-                                <p><strong>(2) Infraestructura de conocimiento</strong>: Knowledge Base centralizándose (Loop). Estratificación clara de herramientas (Teams para lo diario, Loop para el conocimiento, Canva para lo colaborativo y creativo). Documentación viva de procesos clave.</p>
-                                <p><strong>(3) Elevación del nivel de conversación</strong>: Abrí espacios para hablar de cosas antes no habladas (estructura, cultura, eficiencia). Invité a la capa ejecutiva a ver oportunidades de mejora. Propuse reuniones menos largas y más comunicación escrita asincrónica.</p>
-                                <p><strong>El artefacto clave:</strong> Una arquitectura organizacional donde cada pieza tiene propósito claro, donde el conocimiento es transferible, y donde la gente puede crecer sin depender de una sola persona.</p>
+                        <!-- Sección 2: La oportunidad -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">La oportunidad que vi</h4>
+                                <p class="case-hero-text">Durante mi paso por allí, había una <strong>oportunidad importante en cómo se garantizaba la calidad del contenido</strong> a través de múltiples equipos.</p>
+                                <p class="case-hero-text">Los equipos trabajaban bien. Faltaba un lenguaje compartido sobre calidad.</p>
                             </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
 
-                        <div class="case-section">
-                            <div class="case-section-title">Resultado</div>
-                            <div class="case-content">
-                                <p>La empresa tiene hoy un sistema de talento profesionalizándose día a día. Las reuniones bajaron en cantidad; el tiempo de ejecución mejoró. Existe mayor claridad sobre dónde vive el conocimiento. Los proyectos comienzan a funcionar porque existe arquitectura que la sostiene, no porque esté alguien específico ahí cada día. El nivel conversacional de la empresa subió — ahora se habla explícitamente de cultura, estructura, eficiencia. La gente trabaja con más autonomía y menos horas de madrugada.</p>
+                        <!-- Sección 3: Lo que construí -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Lo que construí</h4>
+                                <p class="case-hero-text">Rediseñé la función de revisión de contenidos: la rebautizé de "Associates" a <strong>"Quality Content Management"</strong> — buscando profesionalizarla más y hacerla visible como función estratégica en lugar de soporte administrativo de la producción de contenidos educativos.</p>
+                                <p class="case-hero-text">Creé un sistema centralizado que unificaba subtituladores + revisores de contenido + stakeholders. Desarrollé indicadores que servían simultáneamente a distintos equipos. Cada métrica respondía una pregunta clara: ¿dónde está la fricción real?</p>
+                                <p class="case-hero-text"><strong>El artefacto clave:</strong> Un sistema donde la calidad se media, se hacía visible y se mejoraba como instrumento de alineación — no solo como checklist de revisión.</p>
                             </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
                         </div>
 
-                        <div class="case-learning">
-                            <strong>El aprendizaje que sigo usando:</strong> Mi valor no está en arreglar todo. Mi valor está en estructurar de tal forma que otros puedan seguir sin mí. Las brechas más profundas en las organizaciones no son de dinero o talento bruto. Son de visibilidad sistémica. Cuando algo es invisible, nadie puede mejorarlo. Cuando es visible, los equipos se apropian de ello.
+                        <!-- Sección 4: Resultado -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Resultado</h4>
+                                <p class="case-hero-text">Sistema funcionando con métricas claras. Reducción observable de errores en áreas con seguimiento consistente. Un modelo de calidad que servía como brújula para múltiples áreas. Experiencia operando en contextos globales, remotos, multiidioma.</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
+                        </div>
+
+                        <!-- Sección 5: Aprendizaje -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">El aprendizaje que sigo usando</h4>
+                                <p class="case-hero-text">Un sistema perfecto sin sostenibilidad política es un prototipo, no una transformación. El diagnóstico es solo el 40% del trabajo — el 60% es hacerlo visible, enseñar a otros a verlo, y sostenerlo hasta que se profesionalice sin ti. Sé que me faltó trabajar más en socializar y hacer mucho más visible este sistema. Por eso, hoy, cuando estructuro algo, me pregunto: ¿Quién sostiene esto cuando yo no estoy? ¿Es lo suficientemente visible para que otros lo cuiden y lo evolucionen?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CRITERTEC — FULLSCREEN HERO SECTIONS -->
+                    <div class="case-fullscreen" id="critertec">
+                        <!-- Sección 1: Hero + Contexto -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h3 class="case-hero-title"><svg viewBox="0 0 24 24" width="48" height="48" style="display: inline; margin-right: 1rem; vertical-align: -6px;"><path d="M6 4c-2 0-2 8-2 8s0 8 2 8" stroke="var(--color-accent-main)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="10" y="6" width="8" height="12" stroke="var(--color-accent-main)" stroke-width="2" fill="none"/><line x1="14" y1="6" x2="14" y2="18" stroke="var(--color-accent-main)" stroke-width="2"/><line x1="10" y1="12" x2="18" y2="12" stroke="var(--color-accent-main)" stroke-width="2"/></svg>CRITERTEC</h3>
+                                <p class="case-hero-subtitle">Arquitectura Organizacional</p>
+                                <p class="case-hero-meta">2023–Presente | Soy Digital RD + Transformación Operativa</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Desplaza para continuar</p>
+                        </div>
+
+                        <!-- Sección 2: La oportunidad -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">La oportunidad que vi</h4>
+                                <p class="case-hero-text">Critertec es una empresa joven, ágil, con gente talentosa. Mientras la empresa crecía, muchas cosas funcionaban de formas implícitas e informales — lo que es natural en equipos en expansión rápida. Observé una <strong>oportunidad en hacer explícita y transferible</strong> la cultura, el talento y el conocimiento que ya existían en la empresa.</p>
+                                <p class="case-hero-text">Había brecha entre cómo la empresa se veía a sí misma y cómo funcionaba realmente. Muchas cosas daban resultado, pero nadie podía replicarlas ni explicarlas claramente a nuevas personas.</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
+                        </div>
+
+                        <!-- Sección 3: Lo que construí -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Lo que construí</h4>
+                                <p class="case-hero-text">Trabajé en tres frentes simultáneamente:</p>
+                                <p class="case-hero-text"><strong>(1) Sistema de talento</strong> — algo que no existía: proceso claro de atracción, selección, evaluación, desarrollo. Onboarding estructurado. Evaluaciones periódicas con desarrollo plan.</p>
+                                <p class="case-hero-text"><strong>(2) Infraestructura de conocimiento</strong>: Knowledge Base centralizándose (Loop). Estratificación clara de herramientas (Teams para lo diario, Loop para el conocimiento, Canva para lo colaborativo y creativo). Documentación viva de procesos clave.</p>
+                                <p class="case-hero-text"><strong>(3) Elevación del nivel de conversación</strong>: Abrí espacios para hablar de cosas antes no habladas (estructura, cultura, eficiencia). Invité a la capa ejecutiva a ver oportunidades de mejora. Propuse reuniones menos largas y más comunicación escrita asincrónica.</p>
+                                <p class="case-hero-text"><strong>El artefacto clave:</strong> Una arquitectura organizacional donde cada pieza tiene propósito claro, donde el conocimiento es transferible, y donde la gente puede crecer sin depender de una sola persona.</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
+                        </div>
+
+                        <!-- Sección 4: Resultado -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">Resultado</h4>
+                                <p class="case-hero-text">La empresa tiene hoy un sistema de talento profesionalizándose día a día. Las reuniones bajaron en cantidad; el tiempo de ejecución mejoró. Existe mayor claridad sobre dónde vive el conocimiento. Los proyectos comienzan a funcionar porque existe arquitectura que la sostiene, no porque esté alguien específico ahí cada día. El nivel conversacional de la empresa subió — ahora se habla explícitamente de cultura, estructura, eficiencia. La gente trabaja con más autonomía y menos horas de madrugada.</p>
+                            </div>
+                            <p class="case-scroll-hint">↓ Continúa</p>
+                        </div>
+
+                        <!-- Sección 5: Aprendizaje -->
+                        <div class="case-hero-section">
+                            <div class="case-hero-content">
+                                <h4 class="case-section-heading">El aprendizaje que sigo usando</h4>
+                                <p class="case-hero-text">Mi valor no está en arreglar todo. Mi valor está en estructurar de tal forma que otros puedan seguir sin mí. Las brechas más profundas en las organizaciones no son de dinero o talento bruto. Son de visibilidad sistémica. Cuando algo es invisible, nadie puede mejorarlo. Cuando es visible, los equipos se apropian de ello.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
